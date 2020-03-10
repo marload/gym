@@ -310,10 +310,10 @@ class LunarLander(gym.Env, EzPickle):
         done = False
         if self.game_over or abs(state[0]) >= 1.0:
             done   = True
-            reward = -100
+            reward = -100.0
         if not self.lander.awake:
             done   = True
-            reward = +100
+            reward = +100.0
         return np.array(state, dtype=np.float32), reward, done, {}
 
     def render(self, mode='human'):
